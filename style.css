@@ -1,0 +1,421 @@
+/* --- Core Reset & Variables --- */
+:root {
+  --bg-color: #fcfbfa;
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  --accent: #c94a29; /* Korean Chili Red */
+  --accent-light: #fbf0ed;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* --- Navigation --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 10%;
+  background-color: rgba(252, 251, 250, 0.9);
+  -webkit-backdrop-filter: blur(10px); /* Fixed Safari Compatibility */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* --- Hero Section (Updated with Background Style) --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  /* បន្ថែមរូបភាព Background ម្ហូបកូរ៉េ និងដកឃ្លាឱ្យមើលឃើញច្បាស់ល្អ */
+  background-image:
+    linear-gradient(rgba(226, 219, 219, 0.2), rgba(255, 255, 255, 0.1)),
+    url("bg_img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ធ្វើឱ្យប្រអប់អក្សរមាន Background ពណ៌សព្រាល ដើម្បីកុំឱ្យជាន់ជាមួយរូបភាព */
+.hero-content {
+  max-width: 600px;
+  background: rgba(133, 83, 33, 0);
+  padding: 3.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--text-main);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* --- Sections Common Layout --- */
+.dishes-section,
+.culture-section,
+.about-section,
+.connect-section {
+  padding: 8rem 10%;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+}
+
+.section-title h2 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  color: var(--text-muted);
+}
+
+/* --- About Section Additions --- */
+.about-section {
+  background-color: #fff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.about-box {
+  padding: 2.5rem 2rem;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+}
+
+.about-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow);
+}
+
+.about-box h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.about-box p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* --- Grid & Cards --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-img {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition);
+}
+
+.card:hover .card-img {
+  transform: scale(1.03);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  background-color: var(--accent-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* --- Culture Layout Split --- */
+.culture-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.culture-text h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.culture-img {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+/* --- Connect Section Additions --- */
+.connect-section {
+  background-color: var(--bg-color);
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.connect-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.connect-info h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.connect-info p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.contact-details p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+/* --- Modern Form Inputs --- */
+.connect-form {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-color);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(201, 74, 41, 0.1);
+}
+
+.btn-submit {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* --- Custom Image Mappings (Clean Architecture Fixes) --- */
+.bg-kimchi {
+  background-image: url("bg_img/kimchi.jpg");
+}
+
+.bg-bibimbap {
+  background-image: url("bg_img/bibimbap.jpg");
+}
+
+.bg-bulgogi {
+  background-image: url("bg_img/bulgogi.jpg");
+}
+
+.bg-culture {
+  background-image: url("bg_img/Bancha_Harmony.jpg");
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 3rem;
+  background-color: #130f0f;
+  border-top: 1px solid rgba(209, 204, 204, 0.05);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* --- Connect Responsive Rules --- */
+@media (max-width: 900px) {
+  .culture-container,
+  .connect-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .navbar {
+    padding: 1.5rem 5%;
+  }
+  .dishes-section,
+  .culture-section,
+  .about-section,
+  .connect-section {
+    padding: 5rem 5%;
+  }
+  .connect-form {
+    padding: 2rem;
+  }
+}

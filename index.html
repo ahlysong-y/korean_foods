@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hansik • Discover Korean Cuisine</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts for Elegant Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">한식 <span>Hansik</span></div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about-food">About Food</a></li>
+        <li><a href="#dishes">Popular Dishes</a></li>
+        <li><a href="#culture">Culinary Culture</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+      <div class="hero-content">
+        <span class="subtitle">A Symphony of Flavors</span>
+        <h1>The Art of Korean Cuisine</h1>
+        <p>
+          Experience the perfect balance of fermentation, spice, and
+          centuries-old tradition crafted for wellness and harmony.
+        </p>
+        <a href="#dishes" class="btn">Explore Dishes</a>
+      </div>
+    </header>
+
+    <!-- About Food Section -->
+    <section id="about-food" class="about-section">
+      <div class="section-title">
+        <span class="subtitle">Introduction</span>
+        <h2>What Makes Hansik Unique?</h2>
+        <p>
+          Korean food (Hansik) is rooted deeply in nature, health, and
+          philosophy.
+        </p>
+      </div>
+      <div class="about-grid">
+        <div class="about-box">
+          <h3>Five Colors (Obangsaek)</h3>
+          <p>
+            Traditional dishes balance five core colors—White, Black, Green,
+            Red, and Yellow. Each color represents an elemental force of nature
+            and targets health benefits for different organs.
+          </p>
+        </div>
+        <div class="about-box">
+          <h3>The Gift of Time</h3>
+          <p>
+            Fermentation is the defining technique of Korean food. From
+            slow-aged Kimchi to deep, complex Jang (soy pastes), time transforms
+            simple ingredients into complex flavor powerhouses.
+          </p>
+        </div>
+        <div class="about-box">
+          <h3>Food as Medicine</h3>
+          <p>
+            Built on the belief that "food and medicine grow from the same
+            root," Korean meals focus on highly balanced vegetables, lean
+            proteins, and natural digestion aids.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dishes Section -->
+    <section id="dishes" class="dishes-section">
+      <div class="section-title">
+        <h2>Essential Dishes</h2>
+        <p>
+          Every masterpiece has its staples. Here are the pillars of the Korean
+          table.
+        </p>
+      </div>
+
+      <div class="grid">
+        <!-- Card 1 -->
+        <div class="card" data-dish="kimchi">
+          <div class="card-img bg-kimchi"></div>
+          <div class="card-body">
+            <span class="tag">Fermented</span>
+            <h3>Kimchi (김치)</h3>
+            <p>
+              The soul of Korean cuisine. Spicy, salted, and fermented
+              vegetables—most commonly napa cabbage—packed with probiotics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" data-dish="bibimbap">
+          <div class="card-img bg-bibimbap"></div>
+          <div class="card-body">
+            <span class="tag">Rice Dish</span>
+            <h3>Bibimbap (비빔밥)</h3>
+            <p>
+              Literally "mixed rice." A beautiful bowl of warm rice topped with
+              seasoning vegetables, beef, a raw or fried egg, and spicy
+              gochujang.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" data-dish="bulgogi">
+          <div class="card-img bg-bulgogi"></div>
+          <div class="card-body">
+            <span class="tag">BBQ</span>
+            <h3>Bulgogi (불고기)</h3>
+            <p>
+              Thin, tender slices of marinated beef grilled to perfection. The
+              marinate features a sweet and savory blend of soy sauce, sesame
+              oil, and pear puree.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture Spotlight -->
+    <section id="culture" class="culture-section">
+      <div class="culture-container">
+        <div class="culture-text">
+          <span class="subtitle">Philosophy</span>
+          <h2>Banchan & Harmony</h2>
+          <p>
+            Korean dining is uniquely communal. A traditional meal isn't just a
+            single plate; it revolves around a central main dish accompanied by
+            an array of <strong>Banchan</strong> (side dishes) meant to be
+            shared. The arrangement balances hot and cold, spicy and mild,
+            satisfying both the palate and the body.
+          </p>
+        </div>
+        <div class="culture-img bg-culture"></div>
+      </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="connect-section">
+      <div class="connect-container">
+        <div class="connect-info">
+          <span class="subtitle">Join Us</span>
+          <h2>Let's Stay Connected</h2>
+          <p>
+            Have questions about traditional ingredients, local Korean markets,
+            or recipes? Reach out to us anytime.
+          </p>
+          <div class="contact-details">
+            <p><strong>Email:</strong> hello@hansikguide.com</p>
+            <p><strong>Hours:</strong> Mon - Fri | 9am - 5pm KST</p>
+          </div>
+        </div>
+        <div class="connect-form">
+          <form action="#" method="POST" onsubmit="event.preventDefault()">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="E.g., Jisoo Kim"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="name@domain.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="What would you like to ask or share?"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Hansik Visual Guide. Designed cleanly for food lovers.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
